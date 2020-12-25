@@ -49,7 +49,6 @@ function draw() {
   rectMode(CENTER);
   background(0);
 
-  keyPressed();
   packageSprite.x= packageBody.position.x 
   //packageSprite.y= packageBody.position.y 
   drawSprites();
@@ -58,7 +57,7 @@ function draw() {
 
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-	 packageSprite.velocityY=2;
+     Matter.Body.setStatic(packageBody, false)
 	 console.log("keyPressed");
 
 	 //if(packageSprite.isTouching(groundSprite)){
